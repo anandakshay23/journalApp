@@ -1,0 +1,233 @@
+{
+	"info": {
+		"_postman_id": "2ee472ec-e241-4617-a828-f52286700758",
+		"name": "JournalApp",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "23966904"
+	},
+	"item": [
+		{
+			"name": "Public",
+			"item": [
+				{
+					"name": "HealthCheck",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:8080/public/health-check"
+					},
+					"response": []
+				},
+				{
+					"name": "Create User",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"akshay\",\n    \"password\": \"akshay\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/public/create-user"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Update User",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"password": "akshay",
+								"username": "akshay"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"akshay\",\n    \"password\": \"akshay\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/user"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"password": "aditya",
+								"username": "aditya"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": "localhost:8080/user"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Journal Entry",
+			"item": [
+				{
+					"name": "Get Journal Entry by user",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"password": "aditya",
+								"username": "aditya"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "localhost:8080/journal"
+					},
+					"response": []
+				},
+				{
+					"name": "POST Journal Entry by user",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"password": "aditya",
+								"username": "aditya"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\" : \"Night\",\n    \"content\": \"Night Out!\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/journal"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Journal By ID",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"password": "akshay",
+								"username": "akshay"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "localhost:8080/journal/id/68704bace9638b45662da2cf"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Journal By ID",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"password": "akshay",
+								"username": "akshay"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": "localhost:8080/journal/id/68705007f4211a315ab2c65f"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Journal By ID Copy",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"password": "akshay",
+								"username": "akshay"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\" : \"Morning\",\n    \"content\": \"Gym Time!\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/journal/id/68705007f4211a315ab2c65f"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "Get all users",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"password": "akshay",
+								"username": "akshay"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "localhost:8080/admin/get-all-user"
+					},
+					"response": []
+				},
+				{
+					"name": "Give Admin Access",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"vipul\",\n    \"password\": \"vipul\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/admin/give-admin-access"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
